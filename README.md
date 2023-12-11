@@ -1,5 +1,5 @@
 # Use ChatGPT to develop text encryption and decryption web page
-With the help of ChatGPT, it's much easier to develop web pages. Here I'll show the flow to build a web page to encrypt and decrypt text under the assistant of ChatGPT. And this is the [ChatGPT shared link of this conversation](https://chat.openai.com/share/ed2f3d2b-d33c-4976-be35-e69d1f537f8f).
+With the help of ChatGPT, it's much easier to develop web pages. Here I'll show the flow to build [a web page to encrypt and decrypt text](./index.html) under the assistant of ChatGPT. And this is the [ChatGPT shared link of this conversation](https://chat.openai.com/share/ed2f3d2b-d33c-4976-be35-e69d1f537f8f).
 ## Implement functions
 ```
 Me: Create a HTML page to encrpt text provided by the user.
