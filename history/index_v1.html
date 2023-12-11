@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Encryption</title>
+</head>
+<body>
+
+    <h1>Text Encryption</h1>
+
+    <label for="textInput">Enter Text to Encrypt:</label>
+    <textarea id="textInput" rows="4" cols="50"></textarea>
+
+    <button onclick="encryptText()">Encrypt</button>
+
+    <h2>Encrypted Text:</h2>
+    <textarea id="encryptedText" rows="4" cols="50" readonly></textarea>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script>
+        function encryptText() {
+            var textToEncrypt = document.getElementById('textInput').value;
+            
+            // You should use a proper encryption key and algorithm in a real-world scenario
+            var secretKey = "ThisIsASecretKey";
+            
+            var encryptedText = CryptoJS.AES.encrypt(textToEncrypt, secretKey).toString();
+            
+            document.getElementById('encryptedText').value = encryptedText;
+        }
+    </script>
+
+</body>
+</html>

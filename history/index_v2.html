@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Encryption and Decryption</title>
+</head>
+<body>
+
+    <h1>Text Encryption and Decryption</h1>
+
+    <label for="textInput">Enter Text to Encrypt/Decrypt:</label>
+    <textarea id="textInput" rows="4" cols="50"></textarea>
+
+    <button onclick="encryptText()">Encrypt</button>
+    <button onclick="decryptText()">Decrypt</button>
+
+    <h2>Result:</h2>
+    <textarea id="resultText" rows="4" cols="50" readonly></textarea>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script>
+        var secretKey = "ThisIsASecretKey";
+
+        function encryptText() {
+            var textToEncrypt = document.getElementById('textInput').value;
+            var encryptedText = CryptoJS.AES.encrypt(textToEncrypt, secretKey).toString();
+            document.getElementById('resultText').value = encryptedText;
+        }
+
+        function decryptText() {
+            var textToDecrypt = document.getElementById('textInput').value;
+            try {
+                var decryptedText = CryptoJS.AES.decrypt(textToDecrypt, secretKey).toString(CryptoJS.enc.Utf8);
+                document.getElementById('resultText').value = decryptedText;
+            } catch (error) {
+                document.getElementById('resultText').value = "Error: Unable to decrypt. Please check the input.";
+            }
+        }
+    </script>
+
+</body>
+</html>
